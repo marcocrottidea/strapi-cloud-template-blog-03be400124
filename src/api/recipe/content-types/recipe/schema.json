@@ -15,6 +15,46 @@
       "type": "string",
       "required": true,
       "unique": false
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "cover": {
+      "type": "component",
+      "component": "shared.slider",
+      "repeatable": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "ingredients": {
+      "type": "component",
+      "component": "shared.ingredient",
+      "repeatable": true,
+      "required": true
+    },
+    "instructions": {
+      "type": "blocks",
+      "required": true
+    },
+    "difficulty": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "easy",
+        "medium",
+        "hard"
+      ]
+    },
+    "servings": {
+      "type": "integer"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author"
     }
   }
 }
